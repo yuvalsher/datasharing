@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A practical guide for sharing data with a statistician. Install as an app for offline access."
+    />
+    <meta name="theme-color" content="#0B4F54" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Data Sharing" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png" />
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Figtree:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Data Sharing</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#guide">Skip to guide</a>
+
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="brand-mark" href="#top" aria-label="Data Sharing home">
+          <span class="brand-mark__icon" aria-hidden="true"></span>
+          <span class="brand-mark__text">Data Sharing</span>
+        </a>
+        <div class="site-header__actions">
+          <button
+            type="button"
+            class="btn btn--ghost install-btn"
+            id="install-btn"
+            hidden
+          >
+            Install app
+          </button>
+          <a class="btn btn--ghost" href="#guide">Read guide</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-brand">
+        <div class="hero__veil" aria-hidden="true"></div>
+        <div class="hero__content">
+          <p class="hero__brand" id="hero-brand">Data Sharing</p>
+          <h1 class="hero__title">Get analysis-ready data into a statistician’s hands.</h1>
+          <p class="hero__lede">
+            A practical field guide for collaborators, students, and postdocs who need faster
+            turnaround without hiding the raw story of the data.
+          </p>
+          <div class="hero__cta">
+            <button type="button" class="btn btn--primary install-btn" id="install-btn-hero" hidden>
+              Install app
+            </button>
+            <a class="btn btn--secondary" href="#deliver">Start the checklist</a>
+          </div>
+          <p class="hero__install-hint" id="ios-install-hint" hidden>
+            On iPhone or iPad: tap Share, then <strong>Add to Home Screen</strong>.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="guide" aria-labelledby="guide-heading">
+        <div class="section__inner">
+          <h2 id="guide-heading">Who this is for</h2>
+          <p class="section__lede">
+            Scientific collaborators, consulting students, and anyone whose job is to collate or
+            clean data before analysis begins.
+          </p>
+          <ul class="audience-list">
+            <li>Collaborators who need a statistician to analyze data</li>
+            <li>Students or postdocs looking for consulting advice</li>
+            <li>Junior statistics students preparing shared data sets</li>
+          </ul>
+          <p>
+            The Leek group’s experience is that the number-one source of delay is the state of the
+            data on arrival. Statisticians should be able to handle data in whatever form it
+            arrives — and still see the raw measurements, the processing pipeline, and hidden
+            sources of variability. When processing steps are already standardized, doing that
+            work first can dramatically speed turnaround.
+          </p>
+        </div>
+      </section>
+
+      <section class="section section--alt" id="deliver" aria-labelledby="deliver-heading">
+        <div class="section__inner">
+          <h2 id="deliver-heading">What you should deliver</h2>
+          <p class="section__lede">
+            For maximum speed, hand over this four-part package.
+          </p>
+          <ol class="deliverables">
+            <li>
+              <span class="deliverables__num">01</span>
+              <div>
+                <h3>The raw data</h3>
+                <p>The rawest form you can access — untouched by summarization.</p>
+              </div>
+            </li>
+            <li>
+              <span class="deliverables__num">02</span>
+              <div>
+                <h3>A tidy data set</h3>
+                <p>
+                  Structured so each variable is a column and each observation is a row
+                  (<a href="http://vita.had.co.nz/papers/tidy-data.pdf">Wickham’s tidy data</a>).
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="deliverables__num">03</span>
+              <div>
+                <h3>A code book</h3>
+                <p>Every variable, unit, summary choice, and study-design detail explained.</p>
+              </div>
+            </li>
+            <li>
+              <span class="deliverables__num">04</span>
+              <div>
+                <h3>An exact recipe</h3>
+                <p>The explicit steps from raw data to the tidy tables and code book.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section" id="raw" aria-labelledby="raw-heading">
+        <div class="section__inner">
+          <h2 id="raw-heading">The raw data</h2>
+          <p class="section__lede">
+            Include the rawest form of the data you have access to.
+          </p>
+          <ul>
+            <li>The strange binary file your measurement machine spits out</li>
+            <li>The unformatted Excel file with 10 worksheets from a contractor</li>
+            <li>The complicated JSON you scraped from an API</li>
+            <li>The hand-entered numbers you collected looking through a microscope</li>
+          </ul>
+          <p>You know the raw data is in the right format if you:</p>
+          <ol>
+            <li>Ran no software on the data</li>
+            <li>Did not manipulate any of the numbers</li>
+            <li>Did not remove any data from the data set</li>
+            <li>Did not summarize the data in any way</li>
+          </ol>
+          <p>
+            Reporting manipulated data as raw data is a common way to slow analysis — the analyst
+            often has to forensically reconstruct why the numbers look weird.
+          </p>
+        </div>
+      </section>
+
+      <section class="section section--alt" id="tidy" aria-labelledby="tidy-heading">
+        <div class="section__inner">
+          <h2 id="tidy-heading">The tidy data set</h2>
+          <p class="section__lede">
+            Follow the four principles of tidy data.
+          </p>
+          <ol>
+            <li>Each variable you measure should be in one column</li>
+            <li>Each different observation of that variable should be in a different row</li>
+            <li>There should be one table for each “kind” of variable</li>
+            <li>Multiple tables should include a linking column</li>
+          </ol>
+          <p>
+            Put full, readable column names in the first row — for example
+            <code>AgeAtDiagnosis</code> instead of <code>ADx</code>. In Excel, use one file per
+            table: no multiple worksheets, no macros, no highlighted cells. Or share CSV /
+            tab-delimited text.
+          </p>
+          <p>
+            Genomics example: for 20 people with RNA-seq and clinical data, keep one spreadsheet
+            for demographics (patient id, age, treatment, diagnosis) and another for summarized
+            genomic counts linked by patient id.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="codebook" aria-labelledby="codebook-heading">
+        <div class="section__inner">
+          <h2 id="codebook-heading">The code book</h2>
+          <p class="section__lede">
+            Measurements need more detail than a spreadsheet header can carry.
+          </p>
+          <p>At minimum, document:</p>
+          <ol>
+            <li>Variables and units not obvious from the tidy table</li>
+            <li>Summary choices you made</li>
+            <li>The experimental study design you used</li>
+          </ol>
+          <p>
+            A Word file works well: a “Study design” section describing collection, and a
+            “Code book” section describing each variable and its units. Explain selection —
+            first 20 clinic walk-ins, age-selected patients, randomized treatments, and so on.
+          </p>
+        </div>
+      </section>
+
+      <section class="section section--alt" id="variables" aria-labelledby="variables-heading">
+        <div class="section__inner">
+          <h2 id="variables-heading">How to code variables</h2>
+          <p class="section__lede">
+            Code by statistical data type — and prefer text over opaque numbers.
+          </p>
+          <dl class="type-list">
+            <div>
+              <dt>Continuous</dt>
+              <dd>Quantitative scales that can be fractional (weight in kg).</dd>
+            </div>
+            <div>
+              <dt>Ordinal</dt>
+              <dd>Few ordered levels (poor, fair, good) — store the words, not 1/2/3.</dd>
+            </div>
+            <div>
+              <dt>Categorical</dt>
+              <dd>Unordered categories (male/female) — store labels as text.</dd>
+            </div>
+            <div>
+              <dt>Missing</dt>
+              <dd>Unknown mechanism — code as <code>NA</code>. Do not impute or drop quietly.</dd>
+            </div>
+            <div>
+              <dt>Censored</dt>
+              <dd>
+                Known missingness (below detection, lost to follow-up) — use <code>NA</code> and
+                add a <code>VariableNameCensored</code> TRUE/FALSE column; explain why in the
+                code book.
+              </dd>
+            </div>
+          </dl>
+          <p>
+            Encode every piece of information as exportable text. Color formatting and cell
+            highlights will be lost when the sheet becomes raw text.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="recipe" aria-labelledby="recipe-heading">
+        <div class="section__inner">
+          <h2 id="recipe-heading">The instruction list / script</h2>
+          <p class="section__lede">
+            Reproducibility means others can go from raw data to your tidy output.
+          </p>
+          <p>
+            Ideally, write a computer script in R, Python, or another language that takes the raw
+            data as input and produces the tidy data. Run it more than once and confirm identical
+            output.
+          </p>
+          <p>
+            If you do not code, provide pseudocode — for example: run summarize software version
+            3.1.2 with parameters a=1, b=2, c=3 for each sample; take column three of each
+            output file as the corresponding tidy row. Note the OS you used, and ideally have a
+            labmate confirm they can reproduce the same file.
+          </p>
+        </div>
+      </section>
+
+      <section class="section section--alt" id="expect" aria-labelledby="expect-heading">
+        <div class="section__inner">
+          <h2 id="expect-heading">What you should expect from the analyst</h2>
+          <p class="section__lede">
+            A tidy package speeds the statistician — and still invites careful checking.
+          </p>
+          <p>Expect:</p>
+          <ol>
+            <li>An analysis script that performs each analysis (not just instructions)</li>
+            <li>The exact computer code used to run the analysis</li>
+            <li>All output files and figures generated</li>
+          </ol>
+          <p>
+            Both the statistician and the scientist should understand the analysis. You may not
+            rerun every step alone, but you should be able to explain why each step was done.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="contributors" aria-labelledby="contributors-heading">
+        <div class="section__inner">
+          <h2 id="contributors-heading">Contributors</h2>
+          <ul class="contributors">
+            <li>
+              <a href="http://biostat.jhsph.edu/~jleek/">Jeff Leek</a> — Wrote the initial version.
+            </li>
+            <li>
+              <a href="http://bit.ly/LColladoTorres">L. Collado-Torres</a> — Fixed typos, added
+              links.
+            </li>
+            <li>
+              <a href="http://people.umass.edu/nick/">Nick Reich</a> — Added tips on storing data
+              as text.
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <div class="install-banner" id="install-banner" hidden>
+      <div class="install-banner__copy">
+        <strong>Install Data Sharing</strong>
+        <span>Keep the guide on your home screen — works offline.</span>
+      </div>
+      <div class="install-banner__actions">
+        <button type="button" class="btn btn--primary install-btn" id="install-btn-banner">
+          Install
+        </button>
+        <button type="button" class="btn btn--ghost" id="dismiss-install" aria-label="Dismiss">
+          Not now
+        </button>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <p>
+        Based on
+        <a href="https://github.com/jtleek/datasharing">How to share data with a statistician</a>.
+      </p>
+      <p class="site-footer__meta" id="sw-status" aria-live="polite"></p>
+    </footer>
+
+    <script src="js/app.js" defer></script>
+  </body>
+</html>
